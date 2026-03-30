@@ -526,6 +526,72 @@ export default function SettingsScreen({
         </div>
       </section>
 
+      {/* 使い方 */}
+      <section>
+        <h2 className="text-sm font-bold text-gray-700 mb-1">使い方</h2>
+        <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100">
+          {[
+            {
+              title: '食材を登録する',
+              body: '「食材」画面右上の＋ボタンから食材を追加。名前・カテゴリ・残量・賞味期限を設定できます。調味料は「調味料」タブに分けて管理されます。',
+            },
+            {
+              title: '料理して食材を消費する',
+              body: '「料理する」画面でレシピを選び「料理する」を押すと、使用した食材の残量が自動で減ります。複数人前の場合は人数を変更できます。',
+            },
+            {
+              title: '不足食材を買い物リストに追加',
+              body: 'レシピ詳細の「在庫チェック」タブで不足食材を確認し、ワンタップで買い物リストへ追加できます。',
+            },
+            {
+              title: '週間献立を組む',
+              body: '「献立」画面でカレンダーのセルをタップしてレシピを割り当てます。不足食材はまとめて買い物リストへ追加できます。',
+            },
+            {
+              title: 'カスタムレシピを登録する',
+              body: '「料理する」画面右上の＋ボタンからオリジナルレシピを登録できます。食材名は在庫と一致させると消費が正しく反映されます。',
+            },
+          ].map(item => (
+            <div key={item.title} className="px-4 py-3">
+              <p className="text-sm font-medium text-gray-700 mb-1">{item.title}</p>
+              <p className="text-xs text-gray-500 leading-relaxed">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* プライバシーポリシー */}
+      <section>
+        <h2 className="text-sm font-bold text-gray-700 mb-1">プライバシーポリシー</h2>
+        <div className="bg-white rounded-xl border border-gray-200 px-4 py-4 flex flex-col gap-4">
+          <div>
+            <p className="text-xs font-semibold text-gray-600 mb-1">収集する情報について</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              本アプリはサーバーへのデータ送信を行いません。食材・レシピ・設定データはすべてお使いの端末のブラウザ（localStorage）にのみ保存されます。
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-gray-600 mb-1">広告について</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              本アプリはGoogle AdSenseを利用した広告を表示する場合があります。Googleは広告配信のためにCookieを使用することがあります。詳細はGoogleのプライバシーポリシーをご確認ください。
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-gray-600 mb-1">お問い合わせフォームについて</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              お問い合わせフォームに入力されたメッセージおよびメールアドレスは、返信・サービス改善のみに使用します。第三者への提供は行いません。
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-gray-600 mb-1">免責事項</p>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              本アプリの利用によって生じた損害について、開発者は一切の責任を負いません。食品の管理・廃棄については、ご自身の判断でお願いします。
+            </p>
+          </div>
+          <p className="text-xs text-gray-400">最終更新：2026年3月</p>
+        </div>
+      </section>
+
     </div>
   )
 }
