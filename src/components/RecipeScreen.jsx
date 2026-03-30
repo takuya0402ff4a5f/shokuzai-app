@@ -282,7 +282,7 @@ export default function RecipeScreen({ ingredients, onSelectRecipe, customRecipe
                             <span className={`text-xs font-bold ${diffColor}`}>{diffLabel}</span>
                             {urgentMatch > 0 && (
                               <span className="text-xs text-[#be0d1f] font-medium">
-                                ! {urgentMatch}品期限近い
+                                {urgentMatch}品が期限近い
                               </span>
                             )}
                           </div>
