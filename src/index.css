@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans JP', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  background-color: #f9fafb;
+}
+
+#root {
+  min-height: 100svh;
+}
