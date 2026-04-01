@@ -2077,6 +2077,112 @@ export const RECIPES_DB = [
     ingredients: [{ name: 'かぼちゃ', amount: 200, unit: 'g' }, { name: '鶏ひき肉', amount: 80, unit: 'g' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '大さじ' }] },
   { id: 'niku_dofu', name: '肉豆腐', category: '鍋・煮物', servings: 1,
     ingredients: [{ name: '豚こま切れ肉', amount: 150, unit: 'g' }, { name: '豆腐', amount: 1, unit: '丁' }, { name: '長ねぎ', amount: 0.5, unit: '本' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '大さじ' }] },
+
+  // ── 追加50件 ────────────────────────────────────────
+
+  // 朝食
+  { id: 'banana_pancake', name: 'バナナパンケーキ', category: '朝食', servings: 1,
+    ingredients: [{ name: 'バナナ', amount: 1, unit: '本' }, { name: '卵', amount: 1, unit: '個' }, { name: '小麦粉', amount: 50, unit: 'g' }, { name: '牛乳', amount: 50, unit: 'ml' }, { name: 'バター', amount: 5, unit: 'g' }] },
+  { id: 'avocado_toast', name: 'アボカドトースト', category: '朝食', servings: 1,
+    ingredients: [{ name: '食パン', amount: 2, unit: '枚' }, { name: 'アボカド', amount: 0.5, unit: '個' }, { name: 'レモン汁', amount: 1, unit: '小さじ' }, { name: '塩', amount: 0.5, unit: '小さじ' }] },
+  { id: 'egg_toast', name: '目玉焼きトースト', category: '朝食', servings: 1,
+    ingredients: [{ name: '食パン', amount: 2, unit: '枚' }, { name: '卵', amount: 1, unit: '個' }, { name: 'バター', amount: 5, unit: 'g' }] },
+  { id: 'natto_morning', name: '納豆ごはん', category: '朝食', servings: 1,
+    ingredients: [{ name: '白米', amount: 1, unit: '合' }, { name: '納豆', amount: 1, unit: 'パック' }, { name: '醤油', amount: 1, unit: '小さじ' }] },
+
+  // 丼・ご飯
+  { id: 'negitoro_don', name: 'ねぎとろ丼', category: '丼・ご飯', servings: 1,
+    ingredients: [{ name: '白米', amount: 1, unit: '合' }, { name: 'ネギトロ', amount: 100, unit: 'g' }, { name: '小ねぎ', amount: 1, unit: '袋' }, { name: '醤油', amount: 1, unit: '大さじ' }] },
+  { id: 'ikura_don', name: 'いくら丼', category: '丼・ご飯', servings: 1,
+    ingredients: [{ name: '白米', amount: 1, unit: '合' }, { name: 'いくら', amount: 60, unit: 'g' }, { name: '醤油', amount: 1, unit: '小さじ' }] },
+  { id: 'maze_gohan', name: '混ぜご飯', category: '丼・ご飯', servings: 1,
+    ingredients: [{ name: '白米', amount: 1, unit: '合' }, { name: 'ちりめんじゃこ', amount: 20, unit: 'g' }, { name: 'ごま', amount: 5, unit: 'g' }, { name: '醤油', amount: 1, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }] },
+  { id: 'tofu_don', name: '麻婆豆腐丼', category: '丼・ご飯', servings: 1,
+    ingredients: [{ name: '白米', amount: 1, unit: '合' }, { name: '豆腐', amount: 1, unit: '丁' }, { name: '豚ひき肉', amount: 100, unit: 'g' }, { name: '豆板醤', amount: 1, unit: '小さじ' }, { name: '鶏がらスープの素', amount: 1, unit: '小さじ' }, { name: '片栗粉', amount: 1, unit: '大さじ' }] },
+
+  // 麺類
+  { id: 'ankake_yakisoba', name: 'あんかけ焼きそば', category: '麺類', servings: 1,
+    ingredients: [{ name: '中華麺', amount: 1, unit: '玉' }, { name: '豚こま切れ', amount: 80, unit: 'g' }, { name: 'キャベツ', amount: 100, unit: 'g' }, { name: 'にんじん', amount: 0.25, unit: '本' }, { name: '鶏がらスープの素', amount: 1, unit: '小さじ' }, { name: '片栗粉', amount: 1, unit: '大さじ' }, { name: 'オイスターソース', amount: 1, unit: '大さじ' }] },
+  { id: 'curry_udon', name: 'カレーうどん', category: '麺類', servings: 1,
+    ingredients: [{ name: '冷凍うどん', amount: 1, unit: '玉' }, { name: 'カレールー', amount: 1, unit: '個' }, { name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: '豚こま切れ', amount: 80, unit: 'g' }, { name: '本だし（顆粒）', amount: 1, unit: '小さじ' }] },
+  { id: 'cold_soba', name: 'ざるそば', category: '麺類', servings: 1,
+    ingredients: [{ name: 'そば', amount: 100, unit: 'g' }, { name: 'めんつゆ', amount: 3, unit: '大さじ' }, { name: '小ねぎ', amount: 1, unit: '袋' }, { name: 'わさび', amount: 1, unit: '小さじ' }] },
+  { id: 'pasta_arrabiata', name: 'アラビアータ', category: '麺類', servings: 1,
+    ingredients: [{ name: 'パスタ', amount: 100, unit: 'g' }, { name: 'トマト缶', amount: 200, unit: 'g' }, { name: 'にんにく', amount: 2, unit: '片' }, { name: '唐辛子', amount: 1, unit: '本' }, { name: 'オリーブオイル', amount: 2, unit: '大さじ' }] },
+  { id: 'chicken_ramen', name: '鶏塩ラーメン', category: '麺類', servings: 1,
+    ingredients: [{ name: '中華麺', amount: 1, unit: '玉' }, { name: '鶏むね肉', amount: 100, unit: 'g' }, { name: '鶏がらスープの素', amount: 2, unit: '小さじ' }, { name: '塩', amount: 0.5, unit: '小さじ' }, { name: '長ねぎ', amount: 0.25, unit: '本' }] },
+
+  // 汁物
+  { id: 'tonjiru', name: '豚汁', category: '汁物', servings: 1,
+    ingredients: [{ name: '豚こま切れ', amount: 80, unit: 'g' }, { name: 'にんじん', amount: 0.25, unit: '本' }, { name: 'じゃがいも', amount: 1, unit: '個' }, { name: '大根', amount: 0.1, unit: '本' }, { name: 'みそ', amount: 1.5, unit: '大さじ' }, { name: '本だし（顆粒）', amount: 1, unit: '小さじ' }] },
+  { id: 'cream_soup', name: 'クリームスープ', category: '汁物', servings: 1,
+    ingredients: [{ name: '牛乳', amount: 200, unit: 'ml' }, { name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: 'じゃがいも', amount: 1, unit: '個' }, { name: 'バター', amount: 10, unit: 'g' }, { name: 'コンソメ', amount: 1, unit: '個' }] },
+  { id: 'tomato_soup', name: 'トマトスープ', category: '汁物', servings: 1,
+    ingredients: [{ name: 'トマト缶', amount: 200, unit: 'g' }, { name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: 'コンソメ', amount: 1, unit: '個' }, { name: 'オリーブオイル', amount: 1, unit: '大さじ' }] },
+
+  // 肉メイン（鶏）
+  { id: 'tori_ponzu', name: '鶏もものポン酢炒め', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '鶏もも肉', amount: 1, unit: '枚' }, { name: 'ポン酢', amount: 2, unit: '大さじ' }, { name: 'ごま油', amount: 1, unit: '小さじ' }, { name: 'にんにく', amount: 1, unit: '片' }] },
+  { id: 'tori_nankotsu', name: '鶏軟骨の唐揚げ', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '鶏軟骨', amount: 200, unit: 'g' }, { name: '醤油', amount: 1.5, unit: '大さじ' }, { name: '片栗粉', amount: 3, unit: '大さじ' }, { name: 'にんにく', amount: 1, unit: '片' }] },
+  { id: 'tori_ginger_don', name: '鶏のしょうが焼き', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '鶏もも肉', amount: 1, unit: '枚' }, { name: '生姜', amount: 0.5, unit: '個' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '小さじ' }] },
+
+  // 肉メイン（豚）
+  { id: 'buta_kakuni_donburi', name: '豚の角煮丼', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '豚バラ肉', amount: 200, unit: 'g' }, { name: '白米', amount: 1, unit: '合' }, { name: '醤油', amount: 3, unit: '大さじ' }, { name: 'みりん', amount: 3, unit: '大さじ' }, { name: '砂糖', amount: 2, unit: '大さじ' }, { name: '生姜', amount: 0.5, unit: '個' }] },
+  { id: 'buta_curry_itame', name: '豚肉のカレー炒め', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '豚こま切れ', amount: 150, unit: 'g' }, { name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: 'カレー粉', amount: 1, unit: '大さじ' }, { name: '醤油', amount: 1, unit: '大さじ' }, { name: 'サラダ油', amount: 1, unit: '大さじ' }] },
+  { id: 'buta_seiro', name: '豚バラ蒸し', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '豚バラ肉', amount: 150, unit: 'g' }, { name: 'キャベツ', amount: 150, unit: 'g' }, { name: 'ポン酢', amount: 2, unit: '大さじ' }] },
+
+  // 肉メイン（牛）
+  { id: 'yakiniku', name: '焼き肉', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '牛カルビ', amount: 150, unit: 'g' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }, { name: 'ごま油', amount: 1, unit: '小さじ' }, { name: 'にんにく', amount: 1, unit: '片' }] },
+  { id: 'beef_teriyaki', name: '牛肉のてりやき', category: '肉メイン', servings: 1,
+    ingredients: [{ name: '牛薄切り肉', amount: 150, unit: 'g' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '小さじ' }] },
+
+  // 魚メイン
+  { id: 'salmon_miso_yaki', name: '鮭の味噌焼き', category: '魚メイン', servings: 1,
+    ingredients: [{ name: '鮭（加熱用）', amount: 1, unit: '切れ' }, { name: 'みそ', amount: 1.5, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '小さじ' }] },
+  { id: 'tara_ankake', name: 'タラのあんかけ', category: '魚メイン', servings: 1,
+    ingredients: [{ name: 'タラ', amount: 1, unit: '切れ' }, { name: 'しめじ', amount: 0.5, unit: '袋' }, { name: '醤油', amount: 1, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }, { name: '片栗粉', amount: 1, unit: '大さじ' }] },
+  { id: 'ika_fry', name: 'イカフライ', category: '魚メイン', servings: 1,
+    ingredients: [{ name: 'イカ', amount: 1, unit: '杯' }, { name: 'パン粉', amount: 3, unit: '大さじ' }, { name: '小麦粉', amount: 2, unit: '大さじ' }, { name: '卵', amount: 1, unit: '個' }] },
+  { id: 'saba_miso', name: 'サバの味噌煮', category: '魚メイン', servings: 1,
+    ingredients: [{ name: 'サバ（加熱用）', amount: 1, unit: '切れ' }, { name: 'みそ', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '大さじ' }, { name: '生姜', amount: 0.2, unit: '個' }] },
+  { id: 'maguro_yukke', name: 'マグロのユッケ', category: '魚メイン', servings: 1,
+    ingredients: [{ name: 'マグロ（刺身用）', amount: 100, unit: 'g' }, { name: '醤油', amount: 1, unit: '大さじ' }, { name: 'ごま油', amount: 1, unit: '小さじ' }, { name: '砂糖', amount: 1, unit: '小さじ' }, { name: '卵黄', amount: 1, unit: '個' }] },
+
+  // 副菜
+  { id: 'edamame_shio', name: '枝豆の塩茹で', category: '副菜', servings: 1,
+    ingredients: [{ name: '枝豆', amount: 150, unit: 'g' }, { name: '塩', amount: 1, unit: '小さじ' }] },
+  { id: 'nasu_dengaku', name: 'なすの田楽', category: '副菜', servings: 1,
+    ingredients: [{ name: 'なす', amount: 2, unit: '個' }, { name: 'みそ', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '小さじ' }, { name: 'ごま油', amount: 1, unit: '大さじ' }] },
+  { id: 'toufu_steak', name: '豆腐ステーキ', category: '副菜', servings: 1,
+    ingredients: [{ name: '木綿豆腐', amount: 1, unit: '丁' }, { name: '醤油', amount: 1.5, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }, { name: 'ごま油', amount: 1, unit: '大さじ' }] },
+  { id: 'kakiage', name: 'かき揚げ', category: '副菜', servings: 1,
+    ingredients: [{ name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: 'にんじん', amount: 0.25, unit: '本' }, { name: 'えび', amount: 50, unit: 'g' }, { name: '小麦粉', amount: 4, unit: '大さじ' }, { name: '卵', amount: 0.5, unit: '個' }] },
+  { id: 'gomaae_ingenmame', name: 'いんげんのごま和え', category: '副菜', servings: 1,
+    ingredients: [{ name: 'いんげん', amount: 100, unit: 'g' }, { name: 'ごま', amount: 2, unit: '大さじ' }, { name: '醤油', amount: 1, unit: '大さじ' }, { name: '砂糖', amount: 1, unit: '小さじ' }] },
+  { id: 'jagaimo_itame', name: 'じゃがいもの炒め物', category: '副菜', servings: 1,
+    ingredients: [{ name: 'じゃがいも', amount: 2, unit: '個' }, { name: '醤油', amount: 1.5, unit: '大さじ' }, { name: 'みりん', amount: 1, unit: '大さじ' }, { name: 'バター', amount: 10, unit: 'g' }] },
+
+  // 卵料理
+  { id: 'kakiage_tendon_egg', name: '親子丼風卵とじ', category: '卵料理', servings: 1,
+    ingredients: [{ name: '卵', amount: 2, unit: '個' }, { name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: '鶏もも肉', amount: 80, unit: 'g' }, { name: 'めんつゆ', amount: 2, unit: '大さじ' }] },
+  { id: 'spani_egg', name: 'スパニッシュオムレツ', category: '卵料理', servings: 1,
+    ingredients: [{ name: '卵', amount: 3, unit: '個' }, { name: 'じゃがいも', amount: 1, unit: '個' }, { name: '玉ねぎ', amount: 0.5, unit: '個' }, { name: 'オリーブオイル', amount: 2, unit: '大さじ' }, { name: '塩', amount: 0.5, unit: '小さじ' }] },
+  { id: 'tomato_egg_itame', name: 'トマトと卵の炒め物', category: '卵料理', servings: 1,
+    ingredients: [{ name: '卵', amount: 2, unit: '個' }, { name: 'トマト', amount: 1, unit: '個' }, { name: '鶏がらスープの素', amount: 0.5, unit: '小さじ' }, { name: 'ごま油', amount: 1, unit: '小さじ' }, { name: '塩', amount: 0.3, unit: '小さじ' }] },
+
+  // 鍋・煮物
+  { id: 'mizutaki', name: '水炊き', category: '鍋・煮物', servings: 1,
+    ingredients: [{ name: '鶏もも肉', amount: 150, unit: 'g' }, { name: '白菜', amount: 0.25, unit: '個' }, { name: '豆腐', amount: 0.5, unit: '丁' }, { name: 'しめじ', amount: 0.5, unit: '袋' }, { name: '長ねぎ', amount: 0.5, unit: '本' }, { name: 'ポン酢', amount: 2, unit: '大さじ' }] },
+  { id: 'motsu_nabe', name: 'もつ鍋', category: '鍋・煮物', servings: 1,
+    ingredients: [{ name: 'もつ', amount: 150, unit: 'g' }, { name: 'キャベツ', amount: 150, unit: 'g' }, { name: 'ニラ', amount: 0.5, unit: '束' }, { name: '鶏がらスープの素', amount: 1, unit: '小さじ' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'にんにく', amount: 2, unit: '片' }] },
+  { id: 'nikomi_oden', name: 'おでん風煮込み', category: '鍋・煮物', servings: 1,
+    ingredients: [{ name: '大根', amount: 0.25, unit: '本' }, { name: '卵', amount: 2, unit: '個' }, { name: 'こんにゃく', amount: 0.5, unit: '枚' }, { name: '薄揚げ', amount: 1, unit: '枚' }, { name: '本だし（顆粒）', amount: 1, unit: '小さじ' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }] },
 ]
 
 export const RECIPE_CATEGORIES = [
@@ -2151,6 +2257,16 @@ export const RECIPE_SUBCATEGORY_MAP = {
   kabu_ni: '煮物・浸し', tofu_dengaku: '煮物・浸し', agedashi_tofu: '煮物・浸し',
   coleslaw: 'サラダ・和え物', cucumber_goma: 'サラダ・和え物', onion_ponzu_salad: 'サラダ・和え物',
   caesar_salad: 'サラダ・和え物', tofu_salad: 'サラダ・和え物',
+  // 追加50件
+  negitoro_don: '丼物', ikura_don: '丼物', maze_gohan: '丼物', tofu_don: '丼物',
+  natto_morning: '丼物',
+  ankake_yakisoba: '焼きそば系', curry_udon: 'うどん', cold_soba: 'そば・そうめん',
+  pasta_arrabiata: 'パスタ', chicken_ramen: 'うどん',
+  tori_ponzu: '鶏', tori_nankotsu: '鶏', tori_ginger_don: '鶏',
+  buta_kakuni_donburi: '豚', buta_curry_itame: '豚', buta_seiro: '豚',
+  yakiniku: '牛・合いびき', beef_teriyaki: '牛・合いびき',
+  edamame_shio: '炒め物', nasu_dengaku: '煮物・浸し', toufu_steak: '炒め物',
+  kakiage: '炒め物', gomaae_ingenmame: 'サラダ・和え物', jagaimo_itame: '炒め物',
 }
 
 // 難易度マップ（1=簡単★ / 2=普通★★ / 3=難しい★★★）
@@ -2185,6 +2301,19 @@ export const RECIPE_DIFFICULTY_MAP = {
   beef_stew: 3, tonkatsu: 3, tori_katsu: 3, menchi_katsu: 3, katsudon: 3,
   chanko_nabe: 3, spare_rib: 3, kabocha_soboro_ni: 3,
   pasta_cream_salmon: 3, carbonara: 3,
+  // 追加50件
+  banana_pancake: 2, avocado_toast: 1, egg_toast: 1, natto_morning: 1,
+  negitoro_don: 1, ikura_don: 1, maze_gohan: 2, tofu_don: 2,
+  ankake_yakisoba: 2, curry_udon: 2, cold_soba: 1, pasta_arrabiata: 2, chicken_ramen: 2,
+  tonjiru: 2, cream_soup: 2, tomato_soup: 1,
+  tori_ponzu: 1, tori_nankotsu: 2, tori_ginger_don: 2,
+  buta_kakuni_donburi: 3, buta_curry_itame: 1, buta_seiro: 1,
+  yakiniku: 1, beef_teriyaki: 1,
+  salmon_miso_yaki: 1, tara_ankake: 2, ika_fry: 2, saba_miso: 2, maguro_yukke: 1,
+  edamame_shio: 1, nasu_dengaku: 2, toufu_steak: 1, kakiage: 3,
+  gomaae_ingenmame: 1, jagaimo_itame: 1,
+  kakiage_tendon_egg: 2, spani_egg: 2, tomato_egg_itame: 1,
+  mizutaki: 2, motsu_nabe: 2, nikomi_oden: 2,
 }
 
 export function searchRecipes(query, category = 'すべて') {
