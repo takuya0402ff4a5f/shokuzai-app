@@ -2183,6 +2183,28 @@ export const RECIPES_DB = [
     ingredients: [{ name: 'もつ', amount: 150, unit: 'g' }, { name: 'キャベツ', amount: 150, unit: 'g' }, { name: 'ニラ', amount: 0.5, unit: '束' }, { name: '鶏がらスープの素', amount: 1, unit: '小さじ' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'にんにく', amount: 2, unit: '片' }] },
   { id: 'nikomi_oden', name: 'おでん風煮込み', category: '鍋・煮物', servings: 1,
     ingredients: [{ name: '大根', amount: 0.25, unit: '本' }, { name: '卵', amount: 2, unit: '個' }, { name: 'こんにゃく', amount: 0.5, unit: '枚' }, { name: '薄揚げ', amount: 1, unit: '枚' }, { name: '本だし（顆粒）', amount: 1, unit: '小さじ' }, { name: '醤油', amount: 2, unit: '大さじ' }, { name: 'みりん', amount: 2, unit: '大さじ' }] },
+
+  // ── ユーザー追加レシピ ────────────────────────────────
+  { id: 'yude_tori', name: 'ゆで鶏', category: '肉メイン', servings: 1,
+    url: 'https://www.youtube.com/watch?v=WfQTiYQRtx4',
+    ingredients: [
+      { name: '鶏むね肉', amount: 0.5,  unit: '枚' },
+      { name: 'だし昆布',  amount: 1,    unit: 'g' },
+      { name: '長ねぎ',   amount: 0.25, unit: '本' },
+      { name: '黒コショウ', amount: 1,  unit: '少々' },
+      { name: '塩',        amount: 1,   unit: '少々' },
+      { name: '酒',        amount: 50,  unit: 'ml' },
+      { name: '薄口醤油',  amount: 1,   unit: '大さじ' },
+    ],
+  },
+  { id: 'tori_ham', name: '鶏ハム', category: '肉メイン', servings: 1,
+    url: 'https://www.youtube.com/watch?v=9Aq-Ck9Fbhw&t=244s',
+    ingredients: [
+      { name: '鶏むね肉',    amount: 1, unit: '枚' },
+      { name: '黒コショウ',  amount: 1, unit: '少々' },
+      { name: '粒マスタード', amount: 1, unit: '適量' },
+    ],
+  },
 ]
 
 export const RECIPE_CATEGORIES = [
@@ -2267,6 +2289,8 @@ export const RECIPE_SUBCATEGORY_MAP = {
   yakiniku: '牛・合いびき', beef_teriyaki: '牛・合いびき',
   edamame_shio: '炒め物', nasu_dengaku: '煮物・浸し', toufu_steak: '炒め物',
   kakiage: '炒め物', gomaae_ingenmame: 'サラダ・和え物', jagaimo_itame: '炒め物',
+  // ユーザー追加
+  yude_tori: '鶏', tori_ham: '鶏',
 }
 
 // 難易度マップ（1=簡単★ / 2=普通★★ / 3=難しい★★★）
@@ -2314,6 +2338,8 @@ export const RECIPE_DIFFICULTY_MAP = {
   gomaae_ingenmame: 1, jagaimo_itame: 1,
   kakiage_tendon_egg: 2, spani_egg: 2, tomato_egg_itame: 1,
   mizutaki: 2, motsu_nabe: 2, nikomi_oden: 2,
+  // ユーザー追加
+  yude_tori: 2, tori_ham: 2,
 }
 
 export function searchRecipes(query, category = 'すべて') {

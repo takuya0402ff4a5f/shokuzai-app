@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { calcDeduction, formatAmount } from '../utils/units'
-import { INGREDIENTS_DB } from '../data/ingredientsDb'
 import { getCandidateNames } from '../data/ingredientAliases'
 
 const MULTIPLIERS = [
@@ -9,10 +8,6 @@ const MULTIPLIERS = [
   { label: '2人前',   value: 2   },
 ]
 
-function isCondiment(name) {
-  const db = INGREDIENTS_DB.find(i => i.name === name)
-  return db?.category === '調味料'
-}
 
 export default function RecipeModal({ recipe, ingredients, onCook, onClose, onAddIngredients, onAddToShopping, onQuickAddIngredient, aliases = [], pairPriorities = {} }) {
   const [multiplier, setMultiplier] = useState(1)
@@ -20,7 +15,7 @@ export default function RecipeModal({ recipe, ingredients, onCook, onClose, onAd
 
   // 「食材を追加」タブ用チェック状態（調味料はデフォルトOFF）
   const [checked, setChecked] = useState(() =>
-    Object.fromEntries(recipe.ingredients.map(i => [i.name, !isCondiment(i.name)]))
+    Object.fromEntries(recipe.ingredients.map(i => [i.name, true]))
   )
 
   // 在庫状況を計算（エイリアス考慮）
@@ -28,13 +23,22 @@ export default function RecipeModal({ recipe, ingredients, onCook, onClose, onAd
     const candidates = getCandidateNames(item.name, aliases, pairPriorities)
     const ingredient = ingredients.find(i => candidates.includes(i.name))
     const needed = item.amount * multiplier
-    if (!ingredient) return { status: 'missing', needed, remaining: null, after: null }
+    const noConsume = item.unit === '適量'
+
+    // 適量：登録済みなら ok（消費なし）、未登録なら missing
+    if (noConsume) {
+      if (!ingredient) return { status: 'missing', needed, remaining: null, after: null, noConsume }
+      const remaining = ingredient.totalAmount * (ingredient.remainingPercent / 100)
+      return { status: 'ok', needed, remaining, after: remaining, ingredient, deduct: 0, noConsume }
+    }
+
+    if (!ingredient) return { status: 'missing', needed, remaining: null, after: null, noConsume }
     const remaining = ingredient.totalAmount * (ingredient.remainingPercent / 100)
     const deduct = calcDeduction(needed, item.unit, ingredient)
-    if (deduct == null) return { status: 'missing', needed, remaining, after: null }
+    if (deduct == null) return { status: 'missing', needed, remaining, after: null, noConsume }
     const after = Math.max(0, remaining - deduct)
     const isEnough = deduct <= remaining
-    return { status: isEnough ? 'ok' : 'short', needed, remaining, after, ingredient, deduct }
+    return { status: isEnough ? 'ok' : 'short', needed, remaining, after, ingredient, deduct, noConsume }
   }
 
   const itemStatuses = recipe.ingredients.map(item => ({
@@ -57,6 +61,7 @@ export default function RecipeModal({ recipe, ingredients, onCook, onClose, onAd
   }
 
   function formatNeeded(amount, unit) {
+    if (unit === '適量' || unit === '少々') return unit
     return `${Math.round(amount * 10) / 10}${unit}`
   }
 
@@ -140,10 +145,15 @@ export default function RecipeModal({ recipe, ingredients, onCook, onClose, onAd
                     </div>
                     {item.status !== 'missing' && item.ingredient && (
                       <p className="text-xs text-gray-400 mt-0.5 ml-7">
-                        現在: {formatAmount(item.remaining, item.ingredient.totalUnit)}
-                        {item.status === 'ok'
-                          ? ` → 使用後: ${formatAmount(item.after, item.ingredient.totalUnit)}`
-                          : ' （在庫不足）'
+                        {item.noConsume
+                          ? <span className="text-gray-400">消費なし（適量）</span>
+                          : <>
+                              現在: {formatAmount(item.remaining, item.ingredient.totalUnit)}
+                              {item.status === 'ok'
+                                ? ` → 使用後: ${formatAmount(item.after, item.ingredient.totalUnit)}`
+                                : ' （在庫不足）'
+                              }
+                            </>
                         }
                       </p>
                     )}

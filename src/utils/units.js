@@ -59,6 +59,14 @@ export const ALL_UNITS = [
 // レシピの使用量を食材のtotalUnitに換算する
 // 戻り値: number（換算後の量）| null（換算不可）
 export function calcDeduction(recipeAmount, recipeUnit, ingredient) {
+  // 適量 → 消費なし（0を返す）
+  if (recipeUnit === '適量') return 0
+  // 少々 → 約0.3g相当として処理
+  if (recipeUnit === '少々') {
+    const asGram = 0.3 * recipeAmount
+    return calcDeduction(asGram, 'g', ingredient)
+  }
+
   const { totalUnit, refAmount } = ingredient
   if (recipeUnit === totalUnit) return recipeAmount
   const converted = convertToUnit(recipeAmount, recipeUnit, totalUnit)

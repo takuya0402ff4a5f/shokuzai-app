@@ -95,6 +95,9 @@ export function useIngredients(autoDeleteZero = false) {
       let updated = [...prev]
 
       for (const item of recipeIngredients) {
+        // 適量はスキップ（消費なし）
+        if (item.unit === '適量') continue
+
         let remainingToConsume = item.amount * multiplier // まだ消費すべき量（item.unit単位）
 
         // ペアごとの優先設定に基づいた消費候補リスト
