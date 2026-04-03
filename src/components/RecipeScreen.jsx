@@ -28,6 +28,7 @@ export default function RecipeScreen({ ingredients, onSelectRecipe, customRecipe
   const [activeSubcategory, setActiveSubcategory] = useState('すべて')
   const [urgentOnly, setUrgentOnly] = useState(false)
   const [favOnly, setFavOnly] = useState(false)
+  const [customOnly, setCustomOnly] = useState(false)
   const [diffFilter, setDiffFilter] = useState(0) // 0=すべて
 
   const allRecipes = useMemo(() => [...customRecipes, ...RECIPES_DB], [customRecipes])
@@ -91,6 +92,7 @@ export default function RecipeScreen({ ingredients, onSelectRecipe, customRecipe
       }
       if (urgentOnly && countUrgentMatch(r) === 0) return false
       if (favOnly && !favorites.has(r.id)) return false
+      if (customOnly && !r.isCustom) return false
       if (diffFilter !== 0 && (RECIPE_DIFFICULTY_MAP[r.id] ?? 2) !== diffFilter) return false
       return true
     })
@@ -99,7 +101,7 @@ export default function RecipeScreen({ ingredients, onSelectRecipe, customRecipe
       list = [...list].sort((a, b) => countUrgentMatch(b) - countUrgentMatch(a))
     }
     return list
-  }, [query, searchByIngredient, activeCategory, activeSubcategory, allRecipes, urgentOnly, urgentNames, favOnly, favorites, diffFilter])
+  }, [query, searchByIngredient, activeCategory, activeSubcategory, allRecipes, urgentOnly, urgentNames, favOnly, favorites, customOnly, diffFilter])
 
   const urgentCount = urgentNames.size
 
@@ -145,17 +147,29 @@ export default function RecipeScreen({ ingredients, onSelectRecipe, customRecipe
             食材で絞り込む
           </button>
         </div>
-        <button
-          onClick={() => setFavOnly(v => !v)}
-          className={`shrink-0 px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
-            favOnly
-              ? 'bg-red-50 border-[#f28a92] text-[#be0d1f]'
-              : 'bg-white border-gray-300 text-gray-400 hover:border-[#f28a92] hover:text-[#e83848]'
-          }`}
-          aria-label="お気に入りのみ表示"
-        >
-          {favOnly ? '♥ お気に入り' : '♡ お気に入り'}
-        </button>
+        <div className="flex flex-col gap-1.5 shrink-0">
+          <button
+            onClick={() => setFavOnly(v => !v)}
+            className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
+              favOnly
+                ? 'bg-red-50 border-[#f28a92] text-[#be0d1f]'
+                : 'bg-white border-gray-300 text-gray-400 hover:border-[#f28a92] hover:text-[#e83848]'
+            }`}
+            aria-label="お気に入りのみ表示"
+          >
+            {favOnly ? '♥ お気に入り' : '♡ お気に入り'}
+          </button>
+          <button
+            onClick={() => setCustomOnly(v => !v)}
+            className={`px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors ${
+              customOnly
+                ? 'bg-blue-50 border-blue-400 text-blue-600'
+                : 'bg-white border-gray-300 text-gray-400 hover:border-blue-300 hover:text-blue-500'
+            }`}
+          >
+            ✎ 自作のみ
+          </button>
+        </div>
       </div>
 
       {/* 難易度フィルター */}
@@ -258,12 +272,16 @@ export default function RecipeScreen({ ingredients, onSelectRecipe, customRecipe
                 <div key={recipe.id} className="relative">
                   <button
                     onClick={() => onSelectRecipe(recipe)}
-                    className={`w-full text-left bg-white rounded-xl border p-4 hover:shadow-sm transition-all active:scale-95 ${
+                    className={`w-full text-left rounded-xl border p-4 hover:shadow-sm transition-all active:scale-95 ${
+                      recipe.isCustom ? 'bg-blue-50/40' : 'bg-white'
+                    } ${
                       urgentMatch > 0
                         ? 'border-[#f28a92] hover:border-[#e30f25]'
-                        : favorites.has(recipe.id)
-                          ? 'border-[#f9bec3] hover:border-[#f28a92]'
-                          : 'border-gray-200 hover:border-[#f39800]'
+                        : recipe.isCustom
+                          ? 'border-blue-200 hover:border-blue-400'
+                          : favorites.has(recipe.id)
+                            ? 'border-[#f9bec3] hover:border-[#f28a92]'
+                            : 'border-gray-200 hover:border-[#f39800]'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2">
